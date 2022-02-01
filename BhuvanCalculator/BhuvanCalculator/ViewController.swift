@@ -66,5 +66,23 @@ class ViewController: UIViewController {
         self.operation = "+"
         self.resultLBL.text=""
     }
+    
+    
+    @IBAction func squareRoot(_ sender: UIButton){
+        
+        if let value = self.resultLBL.text{
+            if let doubleVal = Double(value){
+                self.resultLBL.text = String(format: "%.2f", arguments: [doubleVal.squareRoot()])
+            }
+        }
+    }
+    
+//    let stringExp = "3+5/2*6"
+//
+//    let expression = NSExpression(format: stringExp)
+//
+//    let result = expression.expressionValue(with: nil, context: nil) as! Double
+//    print(result)
+
 }
 
