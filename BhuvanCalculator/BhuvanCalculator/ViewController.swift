@@ -43,8 +43,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: UIButton) {
-        self.resultLBL.text! +=
-        (sender.titleLabel?.text)!
+        
+        //Optional Binding
+        if let buttonTitle = sender.titleLabel{
+            self.resultLBL.text = buttonTitle.text
+        }
+        
+//        self.resultLBL.text! += (sender.titleLabel?.text)!
+        
+//        self.resultLBL.text! += sender.titleLabel?.text ?? "Garbage"
         
         if let _ = self.resultLBL.text{
             if let buttonTitle = sender.titleLabel?.text{
