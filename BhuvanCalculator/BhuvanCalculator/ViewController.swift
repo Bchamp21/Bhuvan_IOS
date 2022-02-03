@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         //Optional Binding
         if let buttonTitle = sender.titleLabel{
             self.resultLBL.text = buttonTitle.text
+        }else{
+            self.resultLBL.text = "Garbage"
         }
         
 //        self.resultLBL.text! += (sender.titleLabel?.text)!
