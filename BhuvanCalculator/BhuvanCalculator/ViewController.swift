@@ -24,7 +24,12 @@ class ViewController: UIViewController {
     var operation = ""
     
     @IBAction func eight(_ sender: UIButton) {
-        self.resultLBL.text! += "8"
+//        self.resultLBL.text! += "8"
+        if let buttonTitle = sender.titleLabel?.text{
+//            self.resultLBL.text = buttonTitle.text
+            appenUserInput(text:buttonTitle, to: &self.resultLBL)
+        }
+        
         if operandOne == 0.0 {
             self.operandOne = 8
         }else{
@@ -33,7 +38,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func eleven(_ sender: UIButton) {
-        self.resultLBL.text! += "11"
+//        self.resultLBL.text! += "11"
+        if let buttonTitle = sender.titleLabel?.text{
+//            self.resultLBL.text = buttonTitle.text
+            appenUserInput(text:buttonTitle, to: &self.resultLBL)
+        }
+        
         if operandTwo == 0.0 {
             self.operandTwo = 11
         }else{
@@ -45,21 +55,25 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: UIButton) {
         
         //Optional Binding
-        if let buttonTitle = sender.titleLabel{
-            self.resultLBL.text = buttonTitle.text
-        }else{
-            self.resultLBL.text = "Garbage"
-        }
+//        if let buttonTitle = sender.titleLabel{
+//            self.resultLBL.text = buttonTitle.text
+//        }else{
+//            self.resultLBL.text = "Garbage"
+//        }
         
+        if let buttonTitle = sender.titleLabel?.text{
+//            self.resultLBL.text = buttonTitle.text
+            appenUserInput(text:buttonTitle, to: &self.resultLBL)
+        }
 //        self.resultLBL.text! += (sender.titleLabel?.text)!
         
 //        self.resultLBL.text! += sender.titleLabel?.text ?? "Garbage"
         
-        if let _ = self.resultLBL.text{
-            if let buttonTitle = sender.titleLabel?.text{
-                self.resultLBL.text = buttonTitle
-            }
-        }
+//        if let _ = self.resultLBL.text{
+//            if let buttonTitle = sender.titleLabel?.text{
+//                self.resultLBL.text = buttonTitle
+//            }
+//        }
         self.operation = "+"
     }
     
@@ -91,7 +105,14 @@ class ViewController: UIViewController {
 //    let expression = NSExpression(format: stringExp)
 //
 //    let result = expression.expressionValue(with: nil, context: nil) as! Double
-//    print(result)
+//    print(result)
+    
+    
+    func appenUserInput(text: String, to label: inout UILabel!){
+        if let currentValue = label.text{
+            label =  currentValue + text
+        }
+    }
 
 }
 
