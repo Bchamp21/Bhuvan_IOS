@@ -100,15 +100,22 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuA-z0-NNd">
                                         <rect key="frame" x="0.0" y="308.33333333333326" width="388" height="447"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course desc goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYr-6X-pwP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course desc goes here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYr-6X-pwP">
                                                 <rect key="frame" x="8" y="68" width="176" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="176" id="cvx-GC-1Nk"/>
+                                                    <constraint firstAttribute="height" constant="21" id="v7b-4W-LaV"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstItem="UYr-6X-pwP" firstAttribute="leading" secondItem="RuA-z0-NNd" secondAttribute="leadingMargin" id="8mj-F5-kFI"/>
+                                            <constraint firstItem="UYr-6X-pwP" firstAttribute="top" secondItem="RuA-z0-NNd" secondAttribute="top" constant="68" id="E91-QH-K6x"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okT-Ea-GbA">
                                         <rect key="frame" x="0.0" y="763.33333333333337" width="388" height="44.666666666666629"/>
@@ -121,7 +128,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Previous"/>
                                                         <connections>
-                                                            <action selector="previous:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OhP-8g-V91"/>
+                                                            <action selector="previous:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fY0-H3-OK0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tK5-vd-Saq">
@@ -129,7 +136,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                                         <connections>
-                                                            <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BxO-bI-NAf"/>
+                                                            <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4xk-r2-GFu"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -155,7 +162,6 @@
                                     <constraint firstAttribute="trailing" secondItem="2kT-MM-hqs" secondAttribute="trailing" id="OMa-ep-2ps"/>
                                     <constraint firstItem="RuA-z0-NNd" firstAttribute="leading" secondItem="Ahy-eU-lL9" secondAttribute="leading" id="P7l-lz-UfD"/>
                                     <constraint firstItem="okT-Ea-GbA" firstAttribute="leading" secondItem="Ahy-eU-lL9" secondAttribute="leading" id="Y6y-kG-hrY"/>
-                                    <constraint firstItem="okT-Ea-GbA" firstAttribute="top" secondItem="RuA-z0-NNd" secondAttribute="bottom" multiplier="0.5" id="a0U-ex-DcW"/>
                                     <constraint firstItem="RuA-z0-NNd" firstAttribute="height" secondItem="okT-Ea-GbA" secondAttribute="height" multiplier="10" id="a4h-2Y-qXD"/>
                                     <constraint firstItem="2kT-MM-hqs" firstAttribute="top" secondItem="Ahy-eU-lL9" secondAttribute="top" id="qwd-NN-gDd"/>
                                     <constraint firstAttribute="trailing" secondItem="AmP-4r-CJc" secondAttribute="trailing" id="r9d-UR-DRI"/>
@@ -175,8 +181,10 @@
                     <connections>
                         <outlet property="CourseCRNLBL" destination="q4s-iT-I39" id="vRV-Vf-4Wt"/>
                         <outlet property="CourseIconIMG" destination="2kT-MM-hqs" id="dHr-Lr-2DU"/>
-                        <outlet property="CourseTitleLBL" destination="3UC-xy-Yu9" id="LQd-km-qJY"/>
-                        <outlet property="courseDescLBL" destination="UYr-6X-pwP" id="98Z-62-qga"/>
+                        <outlet property="courseCRNLBL" destination="q4s-iT-I39" id="KG3-aH-g7q"/>
+                        <outlet property="courseDescLBL" destination="UYr-6X-pwP" id="aQ4-Vx-4T1"/>
+                        <outlet property="courseIconIMG" destination="AVV-Dl-Opb" id="pq5-ot-cVV"/>
+                        <outlet property="courseTitleLBL" destination="3UC-xy-Yu9" id="4XP-L7-3KI"/>
                         <outlet property="termOfferedLBL" destination="OCh-Ff-O9E" id="6fF-Q1-I7L"/>
                     </connections>
                 </viewController>
