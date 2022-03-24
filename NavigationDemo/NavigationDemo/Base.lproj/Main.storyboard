@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-1200" y="105"/>
         </scene>
-        <!--MenuVC-->
+        <!--View 2 Title - RootVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuVC" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootVC" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SUBMIT"/>
                                 <connections>
-                                    <segue destination="wuP-QU-Mv6" kind="push" id="sCF-2a-hxf"/>
+                                    <segue destination="wuP-QU-Mv6" kind="push" identifier="menu" id="sCF-2a-hxf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO1-7n-ems">
@@ -70,15 +70,19 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="0.96848052740097046" green="0.93432676417323368" blue="0.65138923899435475" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9Ft-9B-lN9"/>
+                    <navigationItem key="navigationItem" title="View 2 Title - RootVC" id="9Ft-9B-lN9"/>
+                    <connections>
+                        <outlet property="passwordTF" destination="DPb-Eu-XDi" id="a3x-ki-iHN"/>
+                        <outlet property="usernameTF" destination="MO1-7n-ems" id="ayQ-CA-4v0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071.0144927536232" y="103.79464285714285"/>
         </scene>
-        <!--MenuVC-->
+        <!--View 3 Title - MenuVC-->
         <scene sceneID="tRe-lk-aDD">
             <objects>
                 <viewController id="wuP-QU-Mv6" customClass="MenuVC" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +96,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SUBMIT"/>
                                 <connections>
-                                    <segue destination="dD0-tR-j9S" kind="push" id="WsX-bX-9Q2"/>
+                                    <segue destination="dD0-tR-j9S" kind="push" identifier="orderTotal" id="WsX-bX-9Q2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Extra Large" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-Ga-fqd">
@@ -152,9 +156,15 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9n2-4d-8Tm"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" red="0.44176570535239595" green="0.7693973183631897" blue="0.4789558271502084" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iPc-C3-ewQ"/>
+                    <navigationItem key="navigationItem" title="View 3 Title - MenuVC" id="iPc-C3-ewQ"/>
+                    <connections>
+                        <outlet property="extraLarge" destination="lfg-Ga-fqd" id="WhZ-cL-tbr"/>
+                        <outlet property="large" destination="Od3-Zp-dPI" id="OIQ-cM-AXL"/>
+                        <outlet property="medium" destination="T7j-Vh-F2h" id="6fW-Z1-gNP"/>
+                        <outlet property="small" destination="qsM-1l-lIb" id="5on-Mh-OsT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjB-v3-mYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ytj-VI-nMm"/>
@@ -164,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="103.79464285714285"/>
         </scene>
-        <!--MenuVC-->
+        <!--View 4 Title - OsVC-->
         <scene sceneID="OTo-1h-aaL">
             <objects>
-                <viewController id="dD0-tR-j9S" customClass="MenuVC" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dD0-tR-j9S" customClass="OrderStatusVC" customModule="NavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O2W-d3-vTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,20 +189,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07C-as-45T">
-                                <rect key="frame" x="112" y="295" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-HP-ILN">
+                                <rect key="frame" x="98" y="322" width="231" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92622753579999995" green="0.96848052740000001" blue="0.42771451770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W4x-uf-2oU"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" red="0.45409594737011111" green="0.72637576179278607" blue="0.76867932081222534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ass-zg-1Od"/>
+                    <navigationItem key="navigationItem" title="View 4 Title - OsVC" id="ass-zg-1Od"/>
+                    <connections>
+                        <outlet property="orderTotal" destination="BeK-HP-ILN" id="CH4-sF-Vxj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQL-Is-pJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728" y="104"/>
+            <point key="canvasLocation" x="2726.0869565217395" y="103.79464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cv1-pf-d4t">
@@ -214,17 +230,11 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		4C036A8527EA4A86003A1400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C036A8427EA4A86003A1400 /* AppDelegate.swift */; };
 		4C036A8727EA4A86003A1400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C036A8627EA4A86003A1400 /* SceneDelegate.swift */; };
-		4C036A8927EA4A86003A1400 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C036A8827EA4A86003A1400 /* MenuVC.swift */; };
+		4C036A8927EA4A86003A1400 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C036A8827EA4A86003A1400 /* RootVC.swift */; };
 		4C036A8C27EA4A86003A1400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C036A8A27EA4A86003A1400 /* Main.storyboard */; };
 		4C036A8E27EA4A88003A1400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C036A8D27EA4A88003A1400 /* Assets.xcassets */; };
 		4C036A9127EA4A88003A1400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C036A8F27EA4A88003A1400 /* LaunchScreen.storyboard */; };
+		4C602B3227ECE5A30028E687 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C602B3127ECE5A30028E687 /* MenuVC.swift */; };
+		4C602B3427ECE79F0028E687 /* OrderStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C602B3327ECE79F0028E687 /* OrderStatusVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C036A8127EA4A86003A1400 /* NavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C036A8427EA4A86003A1400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C036A8627EA4A86003A1400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C036A8827EA4A86003A1400 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		4C036A8827EA4A86003A1400 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		4C036A8B27EA4A86003A1400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C036A8D27EA4A88003A1400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C036A9027EA4A88003A1400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C036A9227EA4A88003A1400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C602B3127ECE5A30028E687 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		4C602B3327ECE79F0028E687 /* OrderStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				4C036A8427EA4A86003A1400 /* AppDelegate.swift */,
 				4C036A8627EA4A86003A1400 /* SceneDelegate.swift */,
-				4C036A8827EA4A86003A1400 /* MenuVC.swift */,
+				4C036A8827EA4A86003A1400 /* RootVC.swift */,
+				4C602B3127ECE5A30028E687 /* MenuVC.swift */,
+				4C602B3327ECE79F0028E687 /* OrderStatusVC.swift */,
 				4C036A8A27EA4A86003A1400 /* Main.storyboard */,
 				4C036A8D27EA4A88003A1400 /* Assets.xcassets */,
 				4C036A8F27EA4A88003A1400 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C036A8927EA4A86003A1400 /* MenuVC.swift in Sources */,
+				4C036A8927EA4A86003A1400 /* RootVC.swift in Sources */,
+				4C602B3427ECE79F0028E687 /* OrderStatusVC.swift in Sources */,
 				4C036A8527EA4A86003A1400 /* AppDelegate.swift in Sources */,
+				4C602B3227ECE5A30028E687 /* MenuVC.swift in Sources */,
 				4C036A8727EA4A86003A1400 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
