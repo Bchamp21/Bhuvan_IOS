@@ -43,20 +43,23 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dai-k5-8AR">
-                                        <rect key="frame" x="0.0" y="85.5" width="280" height="268.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dai-k5-8AR">
+                                        <rect key="frame" x="0.0" y="85.5" width="280" height="269"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6w-L0-q6s">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="268.5"/>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6w-L0-q6s">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="269"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-Lj-yv6">
-                                        <rect key="frame" x="95" y="370" width="90" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-Lj-yv6">
+                                        <rect key="frame" x="95" y="370.5" width="90" height="69.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mF-yV-mdp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mF-yV-mdp">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="31"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="MuR-7E-oxa"/>
+                                                </constraints>
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Check"/>
@@ -64,8 +67,8 @@
                                                     <action selector="check:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttx-Qy-zFL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBK-63-6bP">
-                                                <rect key="frame" x="0.0" y="39" width="90" height="31"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBK-63-6bP">
+                                                <rect key="frame" x="0.0" y="39" width="90" height="30.5"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
@@ -77,6 +80,10 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="dai-k5-8AR" firstAttribute="top" secondItem="tj9-uO-Xgg" secondAttribute="top" constant="85.5" id="u4I-G0-nS8"/>
+                                    <constraint firstItem="dai-k5-8AR" firstAttribute="centerY" secondItem="tj9-uO-Xgg" secondAttribute="centerY" id="yMI-78-DjU"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
