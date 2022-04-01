@@ -10,6 +10,7 @@ import AVFoundation
 
 class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+
     @IBOutlet var guessWordLBL: UILabel!
     
     @IBOutlet var clueLBL: UILabel!
@@ -22,7 +23,7 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     private var words = [Word]()
     
-    private let alphabet = "abcdefghijkmnopqrstuvwxyz".uppercased()
+    private let alphabet = "abcdefghijklmnopqrstuvwxyz".uppercased()
     
     private var characterChosen = ""
     
@@ -45,13 +46,26 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         self.words.append(Word(token: "MacBook", clue: "A computer with iOS installed"))
         
+        self.words.append(Word(token: "Bhuvan", clue: "Mr. Nice Guy !"))
+        
+        self.words.append(Word(token: "TajMahal", clue: "One of the 7 Wonders "))
+        
+        self.words.append(Word(token: "Water", clue: "Liquid with no colour or taste"))
+        
+        self.words.append(Word(token: "Tree", clue: "Data Structure with nodes"))
+        
+        self.words.append(Word(token: "Map", clue: "Data Structure with Key:Value pair"))
+        
+        self.words.append(Word(token: "SpiderMan", clue: "Famous Marvel movie"))
+        
         setGame()
+//        mask(a: Word(token: "Dog", clue: "An animal that barks"))
     }
 
     @IBAction func check(_ sender: UIButton) {
         print("The Character chosen is \(self.characterChosen)")
         if self.characterChosen != "" && self.word.token.lowercased().contains(self.characterChosen.lowercased()){
-             AudioServicesPlaySystemSound(SystemSoundID(1010))
+             AudioServicesPlaySystemSound(SystemSoundID(1035))
             
             for idx in 0..<self.word.token.count{
                 let stringIdx = self.word.token.index(self.word.token.startIndex, offsetBy: idx)
@@ -61,7 +75,7 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 }
             }
         }else{
-            AudioServicesPlaySystemSound(SystemSoundID(1050))
+            AudioServicesPlaySystemSound(SystemSoundID(1100))
         }
         if self.guessWordLBL.text == self.word.token.uppercased(){
             let alert = UIAlertController(title: "Congrats!", message: "You successfully guessed the correct word", preferredStyle: .alert)
@@ -71,6 +85,8 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }))
             
             self.present(alert, animated: true, completion: nil)
+            
+            self.playAgainBTN.isEnabled = true
             
     }
     }
@@ -82,7 +98,7 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         1
     }
     
-    func pickerView(_ _pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         self.alphabet.count
     }
     
@@ -98,6 +114,8 @@ class GuessWordVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 private func setGame(){
     self.word = self.words[Int.random(in: 0..<self.words.count)]
     
+    mask(a: self.word)
+    
     self.clueLBL.text = "Clue: \(self.word.clue)"
     
     self.playAgainBTN.isEnabled = false
@@ -109,8 +127,8 @@ private func mask(a word: Word){
     let specialCharacters = ["🚗","😎","👻","🦉","🕸","🌎","🎳","🎲","🎰","🧩","🎺","🎸"]
     
     for _ in 0..<word.token.count{
-        _ = arc4random_uniform(UInt32(specialCharacters.count))
-        
+        let x = arc4random_uniform(UInt32(specialCharacters.count))
+        self.guessWordLBL.text! += specialCharacters[Int(x)]
     }
 }
 

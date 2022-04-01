@@ -20,22 +20,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tj9-uO-Xgg">
                                 <rect key="frame" x="20" y="20" width="280" height="440"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-y9-J6n">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-y9-J6n">
                                         <rect key="frame" x="79" y="0.0" width="122" height="69.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43R-z3-ndS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Guess the Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43R-z3-ndS">
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAY-LE-VzO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Guess the Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAY-LE-VzO">
                                                 <rect key="frame" x="0.0" y="24.5" width="122" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-ek-rfd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Guess the Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-ek-rfd">
                                                 <rect key="frame" x="0.0" y="49" width="122" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -44,15 +44,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dai-k5-8AR">
-                                        <rect key="frame" x="0.0" y="85.5" width="280" height="269"/>
+                                        <rect key="frame" x="0.0" y="85.5" width="280" height="268.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6w-L0-q6s">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="268.5"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-Lj-yv6">
-                                        <rect key="frame" x="95" y="370.5" width="90" height="69.5"/>
+                                        <rect key="frame" x="95" y="370" width="90" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mF-yV-mdp">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="31"/>
@@ -62,17 +62,17 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Check"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Check" titleAlignment="center"/>
                                                 <connections>
                                                     <action selector="check:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttx-Qy-zFL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBK-63-6bP">
-                                                <rect key="frame" x="0.0" y="39" width="90" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="39" width="90" height="31"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Play again"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Play again" titleAlignment="center"/>
                                                 <connections>
                                                     <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FGL-5o-w21"/>
                                                 </connections>
@@ -81,8 +81,9 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dai-k5-8AR" firstAttribute="top" secondItem="tj9-uO-Xgg" secondAttribute="top" constant="85.5" id="u4I-G0-nS8"/>
-                                    <constraint firstItem="dai-k5-8AR" firstAttribute="centerY" secondItem="tj9-uO-Xgg" secondAttribute="centerY" id="yMI-78-DjU"/>
+                                    <constraint firstAttribute="height" secondItem="H6w-L0-q6s" secondAttribute="height" multiplier="1.63873" id="1V2-ex-3Tc"/>
+                                    <constraint firstAttribute="height" secondItem="7mF-yV-mdp" secondAttribute="height" multiplier="14.1935" id="DHA-bB-3Df"/>
+                                    <constraint firstAttribute="height" secondItem="pBK-63-6bP" secondAttribute="height" multiplier="14.1935" id="e9v-kC-Y7z"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -98,7 +99,7 @@
                     <connections>
                         <outlet property="alphabetPV" destination="H6w-L0-q6s" id="3cJ-Wy-81v"/>
                         <outlet property="clueLBL" destination="vcV-ek-rfd" id="x0u-Vk-U5K"/>
-                        <outlet property="guessWordLBL" destination="43R-z3-ndS" id="tod-UN-Gbc"/>
+                        <outlet property="guessWordLBL" destination="yAY-LE-VzO" id="8Wq-ud-w84"/>
                         <outlet property="playAgainBTN" destination="pBK-63-6bP" id="cxf-oR-Ih2"/>
                     </connections>
                 </viewController>
