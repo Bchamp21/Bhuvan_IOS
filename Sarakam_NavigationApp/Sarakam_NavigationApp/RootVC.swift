@@ -9,10 +9,28 @@ import UIKit
 
 class RootVC: UIViewController {
 
+
+    @IBOutlet var usernameTF: UITextField!
+    
+    @IBOutlet var passwordTF: UITextField!
+    
+    @IBOutlet var loginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.passwordTF.isEnabled = false
+        self.loginBtn.isEnabled = false
+        
         // Do any additional setup after loading the view.
+        self.usernameTF.isEnabled = true
+        if(self.usernameTF.text == "admin"){
+            self.passwordTF.isEnabled = true
+        }
+        if(self.passwordTF.text == "password"){
+            self.loginBtn.isEnabled = true
+        }
+        
     }
     
 
@@ -25,5 +43,7 @@ class RootVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
