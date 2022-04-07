@@ -9,10 +9,15 @@ import UIKit
 
 class ImageDescVC: UIViewController {
 
+    var descp: String = ""
+    var imageNum: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.imageDesc.image = UIImage(named: imageNum)
+        self.lblDesc.text = descp
     }
     
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C9F443827FF5D4D004AD4C7 /* ArticleCellTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F443727FF5D4D004AD4C7 /* ArticleCellTVC.swift */; };
+		4C9F443B27FF6398004AD4C7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9F443A27FF6398004AD4C7 /* SDWebImage */; };
 		4CB3175A27FCBA2400FE7925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3175927FCBA2400FE7925 /* AppDelegate.swift */; };
 		4CB3175C27FCBA2400FE7925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3175B27FCBA2400FE7925 /* SceneDelegate.swift */; };
 		4CB3175E27FCBA2400FE7925 /* SportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3175D27FCBA2400FE7925 /* SportsVC.swift */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C9F443727FF5D4D004AD4C7 /* ArticleCellTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellTVC.swift; sourceTree = "<group>"; };
 		4CB3175627FCBA2400FE7925 /* SarakamNewAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SarakamNewAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB3175927FCBA2400FE7925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB3175B27FCBA2400FE7925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9F443B27FF6398004AD4C7 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 				4CB3175B27FCBA2400FE7925 /* SceneDelegate.swift */,
 				4CB3175D27FCBA2400FE7925 /* SportsVC.swift */,
 				4CB3176D27FCBBA200FE7925 /* DetailArticleVC.swift */,
+				4C9F443727FF5D4D004AD4C7 /* ArticleCellTVC.swift */,
 				4CB3175F27FCBA2400FE7925 /* Main.storyboard */,
 				4CB3176F27FCBD3F00FE7925 /* Model.swift */,
 				4CB3176227FCBA2500FE7925 /* Assets.xcassets */,
@@ -89,6 +94,9 @@
 			dependencies = (
 			);
 			name = SarakamNewAPIDemo;
+			packageProductDependencies = (
+				4C9F443A27FF6398004AD4C7 /* SDWebImage */,
+			);
 			productName = SarakamNewAPIDemo;
 			productReference = 4CB3175627FCBA2400FE7925 /* SarakamNewAPIDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 4CB3174D27FCBA2400FE7925;
+			packageReferences = (
+				4C9F443927FF6398004AD4C7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 4CB3175727FCBA2400FE7925 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -148,6 +159,7 @@
 				4CB3176E27FCBBA200FE7925 /* DetailArticleVC.swift in Sources */,
 				4CB3175E27FCBA2400FE7925 /* SportsVC.swift in Sources */,
 				4CB3175A27FCBA2400FE7925 /* AppDelegate.swift in Sources */,
+				4C9F443827FF5D4D004AD4C7 /* ArticleCellTVC.swift in Sources */,
 				4CB3175C27FCBA2400FE7925 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C9F443927FF6398004AD4C7 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C9F443A27FF6398004AD4C7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C9F443927FF6398004AD4C7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CB3174E27FCBA2400FE7925 /* Project object */;
 }

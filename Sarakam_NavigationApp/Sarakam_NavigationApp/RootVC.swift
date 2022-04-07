@@ -16,20 +16,31 @@ class RootVC: UIViewController {
     
     @IBOutlet var loginBtn: UIButton!
     
+    @IBAction func usernameAction(_ sender: UITextField) { if(self.usernameTF.text == "admin"){
+        self.passwordTF.isEnabled = true
+        }
+    }
+    
+    
+    @IBAction func passwordAction(_ sender: Any) {
+        if usernameTF.text == "admin" {
+            self.passwordTF.isEnabled = true
+        }
+        
+        if passwordTF.text == "password"{
+            self.loginBtn.isEnabled = true
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
         
         self.passwordTF.isEnabled = false
         self.loginBtn.isEnabled = false
         
-        // Do any additional setup after loading the view.
-        self.usernameTF.isEnabled = true
-        if(self.usernameTF.text == "admin"){
-            self.passwordTF.isEnabled = true
-        }
-        if(self.passwordTF.text == "password"){
-            self.loginBtn.isEnabled = true
-        }
         
     }
     
@@ -44,6 +55,23 @@ class RootVC: UIViewController {
     }
     */
     
+    @IBAction func login(_ sender: UIButton) {
+        if passwordTF.text == "password"{
+            self.loginBtn.isEnabled = true
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueName = segue.identifier{
+            switch segueName{
+            case "login":
+                if ((segue.destination as? GalleryVC) != nil){}
+            default :
+                break
+            }
+        }
+    }
     
 
 }

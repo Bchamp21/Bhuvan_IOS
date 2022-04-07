@@ -16,6 +16,8 @@ class SportsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         self.sportsArticlesTableView.delegate = self
         self.sportsArticlesTableView.dataSource = self
+        
+        loadJson(from: AppConstants.url)
     }
 
     @IBOutlet var sportsArticlesTableView: UITableView!
@@ -30,6 +32,23 @@ class SportsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let article = self.articles[indexPath.row]
+        
+        if let articleCell = cell as? ArticleCellTVC{
+            
+            if let title = article.title{
+                articleCell.titleLBL.text = title
+            }
+            
+            if let description = article.description{
+                articleCell.descriptionLBL.text = description
+            }
+            
+            if let author = article.author{
+                articleCell.authorLBL.text = "Author: \(author)"
+            }
+        }
         
         return cell
     }
@@ -46,14 +65,25 @@ class SportsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             case "detailSegue":
                 
-                if let dsVC = segue.destination as? DetailArticleVC{
+                if let descVC = segue.destination as? DetailArticleVC{
                     
 //                    osVC.pizzaName = "Pepparoni Pizza"
-//
 //                    osVC.pizzaCost = 5.25
+//                    dsVC.navigationItem.title = "Order Confirmed"
+                    if let ip = sender as? IndexPath{
+                        let article = self.articles[ip.row]
+                        
+                        if let title = article.title{
+                            descVC.titleText = title
+                        }
+                        if let content = article.content{
+                            descVC.content = content
+                        }
+                        if let imageUrl = article.urlToImage{
+                            descVC.imageUrl = imageUrl
+                        }
+                    }
                     
-                    
-                    dsVC.navigationItem.title = "Order Confirmed"
                     
                 }
                 
@@ -62,5 +92,41 @@ class SportsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    private func loadJson(from url: String){
+        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler:  { data, response, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            
+            do{
+                let jsonResponse = try JSONDecoder().decode(Articles.self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.articles = jsonResponse.articles
+                    self.sportsArticlesTableView.reloadData()
+                }
+                
+            }catch{
+                print(error)
+            }
+        })
+                                              
+         task.resume()
+}
+                                              
+   private func loadImage(for imageView: UIImageView, from url: String){
+            let task = URLSession.shared.dataTask(with: URL(string: url)!){
+                data, response, error in
+                
+                guard case let data = data, error == nil else{
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    imageView.self =
+                }
+            }
 }
 
+}

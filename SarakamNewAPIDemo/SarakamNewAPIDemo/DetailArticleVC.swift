@@ -13,6 +13,12 @@ class DetailArticleVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.titleLBL.text = self.titleText
+        
+        self.contentTextView.text = self.content
+        
+        self.thunmnailIV.sd_setImage(with: URL(string:self.imageUrl),placeholderImage: UIImage())
     }
     
 
@@ -25,5 +31,16 @@ class DetailArticleVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBOutlet weak var titleLBL: UILabel!
+    
+    @IBOutlet weak var thunmnailIV: UIImageView!
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    var titleText = ""
+    
+    var imageUrl = ""
+    
+    var content = ""
+    
+    
 }
