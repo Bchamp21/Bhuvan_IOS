@@ -7,7 +7,9 @@
 
 import UIKit
 
-class BooksTVC: UIViewController {
+class BooksTVC: UITableViewController {
+
+    var books: [Book] = [Book]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +27,30 @@ class BooksTVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.books.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
+        
+        let book = self.books[indexPath.row]
+        
+        var config = cell.defaultContentConfiguration()
+        
+        config.text = book.title!
+        
+        config.secondaryText = "ID: \(book.bookID!) -- Pages: \(book.pages)"
+        
+        config.image = UIImage(systemName: "person")
+        
+        cell.contentConfiguration = config
+        
+        return cell
+    }
 }

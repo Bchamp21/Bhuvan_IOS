@@ -31,7 +31,7 @@ extension Book{
         
         let request : NSFetchRequest<Student> = Student.fetchRequest()
         
-        request.predicate = NSPredicate(format: "any bookID == %@", Book.bookId)
+        request.predicate = NSPredicate(format: "any bookID == %i", Book.bookID)
         
         do{
             let records = try AppDelegate.context.fetch(request)

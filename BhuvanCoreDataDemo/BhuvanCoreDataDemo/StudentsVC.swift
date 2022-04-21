@@ -29,8 +29,14 @@ class StudentsVC: UIViewController {
         
         request.sortDescriptors = [NSSortDescriptor(key: "stuID", ascending: true)]
         
+        self.fetchResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: AppDelegate.context, sectionNameKeyPath: nil, cacheName: nil)
+        
         do{
-            self.studentRecords  = try AppDelegate.context.fetch(request)
+            try self.fetchResultsController?.performFetch()
+            
+            self.studentsTV.reloadData()
+            
+//            self.studentRecords  = try AppDelegate.context.fetch(request)
         }catch{
             print(error)
         }
@@ -48,7 +54,8 @@ extension StudentsVC: UITableViewDelegate{
 
 extension StudentsVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.studentRecords.count
+//        self.studentRecords.count
+        self.fetchResultsController?.sections![section].numberOfObjects ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,18 +65,20 @@ extension StudentsVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for : indexPath)
         
-        let student = self.studentRecords[indexPath.row]
+//        let student = self.studentRecords[indexPath.row]
+        
+        let student = self.fetchResultsController?.object(at: indexPath){
         var config = cell.defaultContentConfiguration()
         
         config.text = student.fullName
         
-        config.secondaryText = "ID: \(student.stuID!) -- GPA: \(student.GPA)"
+        config.secondaryText = "ID: \(student.studentID!) -- GPA: \(student.gpa)"
         
         config.image = UIImage(systemName: "person")
         
         cell.contentConfiguration = config
         
         return cell
-        
+        }
     }
 }
